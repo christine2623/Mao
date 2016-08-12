@@ -72,17 +72,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Command line basics.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Command line basics.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Command line basics.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="72" column="2" selection-start-line="72" selection-start-column="2" selection-end-line="72" selection-end-column="2" />
+            <state relative-caret-position="489">
+              <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Linex shell command" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Linex shell command" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Linex shell command">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="532">
@@ -154,8 +154,8 @@
         <option value="$PROJECT_DIR$/test.ipynb" />
         <option value="$PROJECT_DIR$/NY SAT scores and demographics factors.py" />
         <option value="$PROJECT_DIR$/StarWars Survey.py" />
-        <option value="$PROJECT_DIR$/Command line basics.txt" />
         <option value="$PROJECT_DIR$/Linex shell command" />
+        <option value="$PROJECT_DIR$/Command line basics.txt" />
       </list>
     </option>
   </component>
@@ -860,7 +860,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27760968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1255,18 +1255,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Command line basics.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="72" column="2" selection-start-line="72" selection-start-column="2" selection-end-line="72" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Linex shell command">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Command line basics.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
           <folding />
         </state>
       </provider>
