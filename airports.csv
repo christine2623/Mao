@@ -1,0 +1,31 @@
+id,name,city,country,code,icao,latitude,longitude,altitude,offset,dst,timezone
+1,Goroka,Goroka,Papua New Guinea,GKA,AYGA,-6.081689,145.391881,5282,10,U,Pacific/Port_Moresby
+2,Madang,Madang,Papua New Guinea,MAG,AYMD,-5.207083,145.7887,20,10,U,Pacific/Port_Moresby
+3,Mount Hagen,Mount Hagen,Papua New Guinea,HGU,AYMH,-5.826789,144.295861,5388,10,U,Pacific/Port_Moresby
+4,Nadzab,Nadzab,Papua New Guinea,LAE,AYNZ,-6.569828,146.726242,239,10,U,Pacific/Port_Moresby
+5,Port Moresby Jacksons Intl,Port Moresby,Papua New Guinea,POM,AYPY,-9.443383,147.22005,146,10,U,Pacific/Port_Moresby
+6,Wewak Intl,Wewak,Papua New Guinea,WWK,AYWK,-3.583828,143.669186,19,10,U,Pacific/Port_Moresby
+7,Narsarsuaq,Narssarssuaq,Greenland,UAK,BGBW,61.160517,-45.425978,112,-3,E,America/Godthab
+8,Nuuk,Godthaab,Greenland,GOH,BGGH,64.190922,-51.678064,283,-3,E,America/Godthab
+9,Sondre Stromfjord,Sondrestrom,Greenland,SFJ,BGSF,67.016969,-50.689325,165,-3,E,America/Godthab
+10,Thule Air Base,Thule,Greenland,THU,BGTL,76.531203,-68.703161,251,-4,E,America/Thule
+11,Akureyri,Akureyri,Iceland,AEY,BIAR,65.659994,-18.072703,6,0,N,Atlantic/Reykjavik
+12,Egilsstadir,Egilsstadir,Iceland,EGS,BIEG,65.283333,-14.401389,76,0,N,Atlantic/Reykjavik
+13,Hornafjordur,Hofn,Iceland,HFN,BIHN,64.295556,-15.227222,24,0,N,Atlantic/Reykjavik
+14,Husavik,Husavik,Iceland,HZK,BIHU,65.952328,-17.425978,48,0,N,Atlantic/Reykjavik
+15,Isafjordur,Isafjordur,Iceland,IFJ,BIIS,66.058056,-23.135278,8,0,N,Atlantic/Reykjavik
+16,Keflavik International Airport,Keflavik,Iceland,KEF,BIKF,63.985,-22.605556,171,0,N,Atlantic/Reykjavik
+17,Patreksfjordur,Patreksfjordur,Iceland,PFJ,BIPA,65.555833,-23.965,11,0,N,Atlantic/Reykjavik
+18,Reykjavik,Reykjavik,Iceland,RKV,BIRK,64.13,-21.940556,48,0,N,Atlantic/Reykjavik
+19,Siglufjordur,Siglufjordur,Iceland,SIJ,BISI,66.133333,-18.916667,10,0,N,Atlantic/Reykjavik
+20,Vestmannaeyjar,Vestmannaeyjar,Iceland,VEY,BIVM,63.424303,-20.278875,326,0,N,Atlantic/Reykjavik
+21,Sault Ste Marie,Sault Sainte Marie,Canada,YAM,CYAM,46.485001,-84.509445,630,-5,A,America/Toronto
+22,Winnipeg St Andrews,Winnipeg,Canada,YAV,CYAV,50.056389,-97.0325,760,-6,A,America/Winnipeg
+23,Shearwater,Halifax,Canada,YAW,CYAW,44.639721,-63.499444,167,-4,A,America/Halifax
+24,St Anthony,St. Anthony,Canada,YAY,CYAY,51.391944,-56.083056,108,-3.5,A,America/St_Johns
+25,Tofino,Tofino,Canada,YAZ,CYAZ,49.082222,-125.7725,80,-8,A,America/Vancouver
+26,Kugaaruk,Pelly Bay,Canada,YBB,CYBB,68.534444,-89.808056,56,-7,A,America/Edmonton
+27,Baie Comeau,Baie Comeau,Canada,YBC,CYBC,49.1325,-68.204444,71,-5,A,America/Toronto
+28,Bagotville,Bagotville,Canada,YBG,CYBG,48.330555,-70.996391,522,-5,A,America/Toronto
+29,Baker Lake,Baker Lake,Canada,YBK,CYBK,64.298889,-96.077778,59,-6,A,America/Winnipeg
+30,Campbell River,Campbell River,Canada,YBL,CYBL,49.950832,-125.270833,346,-8,A,America/Vancouver

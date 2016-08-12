@@ -1,0 +1,42 @@
+pwd: returns the current directory and stands for print working directory.
+cd: to switch to a directory
+cd ~: back to the root
+mkdir test: create a directory called test
+rmdir test: remove a directory called test
+mkdir -v test2: -v is a option that will print output when it makes the folder
+cat: print out the content in the file
+ls: show all the visible files in current path
+ls -l: create a formatted menu-like output and display all the visible files in current path (show permissinos, user, size etc)
+ls -a: display both the visible and hidden files in current path
+touch file.txt: create a new file called file.txt
+echo: will print whatever you tell it to as output
+>: redirctory  (echo "All bears should juggle" > test.txt) redirect the output to test.txt (overwrite the file)
+>>: redirectory, but it won't overwrite the file. it will like append the text to the file.
+nano test.txt: will open the test.txt file for editing.
+gedit script.py &: gedit means edit the file. & means open the file for editting while keep the shell running in background.
+pip install package_name: in python, use pip to install a package
+apt-get install program_name: in Ubuntu, use apt-get to install a program
+sudo: open up the highest level of authority, sometimes a password is required.
+virtualenc Python2: will create a virtual environment which runs python2 and create a folder in the current directory called python2
+virtualenv -p /usr/bin/python3 python3: -p flag allows us to change the Python interpreter that virtualenv uses(from python2 to python3).
+source python3/bin/activate: to activate a virtualenv called python3 in current directory
+deactivate: deactivate a virtualenv
+python -V: check the version of Python that you are using
+pip freeze: check which packages are currently installed and their versions
+import filename.py: allow you to import all the functions and classes defined in the .py file
+filename.function(): If you are going to use the function in the imported file, called it this way
+sys.argv[1]: sys is a package that can get argument from command line. argv is a list allows you to retrieve the positional arguments passed into the script.
+# python script.py 82.  Then script.py is the index 0, 82 is index 1.
+sort < file.txt: sort the lines of a file in alphabetical order
+grep "pass" beer.txt coffee.txt: search through the contents of either files to find a specific line of text("pass").
+?: wildcard, if beer?.txt, then beer1.txt, beer2.txt will all be included
+* : act as ?, but ? only can stand for one charc while * can represent more than one charcs
+head: get the first ten lines in a file
+tail: get the last ten lines in a file
+|: The pipe character, allows you to send the standard output from one command to the standard input of another command.
+tail -n 10 logs.txt | grep "Error": get the last ten lines in the logs.txt file and find the string "Error" in them
+&& : run two commands sequentially, but not pass output between them, we can use && to chain them
+\: escape character. tells the shell to not treat the character as special, but to treat it as a plain character instead.
+
+
+

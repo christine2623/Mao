@@ -1,0 +1,31 @@
+id,name,alias,iata,icao,callsign,country,active
+1,Private flight,\N,-,NaN,NaN,NaN,Y
+2,135 Airways,\N,NaN,GNL,GENERAL,United States,N
+3,1Time Airline,\N,1T,RNX,NEXTIME,South Africa,Y
+4,2 Sqn No 1 Elementary Flying Training School,\N,NaN,WYT,NaN,United Kingdom,N
+5,213 Flight Unit,\N,NaN,TFU,NaN,Russia,N
+6,223 Flight Unit State Airline,\N,NaN,CHD,CHKALOVSK-AVIA,Russia,N
+7,224th Flight Unit,\N,NaN,TTF,CARGO UNIT,Russia,N
+8,247 Jet Ltd,\N,NaN,TWF,CLOUD RUNNER,United Kingdom,N
+9,3D Aviation,\N,NaN,SEC,SECUREX,United States,N
+10,40-Mile Air,\N,Q5,MLA,MILE-AIR,United States,Y
+11,4D Air,\N,NaN,QRT,QUARTET,Thailand,N
+12,611897 Alberta Limited,\N,NaN,THD,DONUT,Canada,N
+13,Ansett Australia,\N,AN,AAA,ANSETT,Australia,Y
+14,Abacus International,\N,1B,NaN,NaN,Singapore,Y
+15,Abelag Aviation,\N,W9,AAB,ABG,Belgium,N
+16,Army Air Corps,\N,NaN,AAC,ARMYAIR,United Kingdom,N
+17,Aero Aviation Centre Ltd.,\N,NaN,AAD,SUNRISE,Canada,N
+18,Aero Servicios Ejecutivos Internacionales,\N,NaN,SII,ASEISA,Mexico,N
+19,Aero Biniza,\N,NaN,BZS,BINIZA,Mexico,N
+20,Aero Albatros,\N,NaN,ABM,ALBATROS ESPANA,Spain,N
+21,Aigle Azur,\N,ZI,AAF,AIGLE AZUR,France,Y
+22,Aloha Airlines,\N,AQ,AAH,ALOHA,United States,Y
+23,Alaska Island Air,\N,NaN,AAK,ALASKA ISLAND,United States,N
+24,American Airlines,\N,AA,AAL,AMERICAN,United States,Y
+25,Aviation Management Corporation,\N,NaN,AAM,AM CORP,United States,N
+26,Atlantis Airlines (USA),\N,NaN,AAO,ATLANTIS AIR,United States,N
+27,Aerovista Airlines,\N,NaN,AAP,AEROVISTA GROUP,United Arab Emirates,N
+28,Asiana Airlines,\N,OZ,AAR,ASIANA,Republic of Korea,Y
+29,Askari Aviation,\N,4K,AAS,AL-AAS,Pakistan,Y
+30,Australia Asia Airlines,\N,NaN,AAU,AUSTASIA,Australia,N

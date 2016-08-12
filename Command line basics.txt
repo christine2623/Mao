@@ -1,0 +1,75 @@
+# command-line interfac = shell = terminal
+# A command-line interface lets you switch between folders and launch programs by typing commands.
+# our terminal missions will be using Linux. In particular, we'll be running Ubuntu 14.04
+# The dollar sign is called the command prompt.
+# Anything you type to the right of it is a shell command, and will be executed immediately when you hit enter.
+
+pwd: returns the current directory and stands for print working directory.
+# When we typed pwd in the last screen, the terminal printed out what folder we were in.
+
+# we indicate that dq is in home folder by separating them with a forward slash -- home/dq
+# We indicate that home is at the root of the filesystem with the leading slash -- /home
+# home is a folder at the root of the filesystem, and dq is a folder inside the home folder.
+
+# We can use the cd command to switch directories. You can type cd / to switch to the root directory.
+cd /
+# cd /home/dq will switch to the dq folder
+
+# Any path that starts with / is an absolute path. An absolute path is in relation to the root of the filesystem.
+
+# relative paths are relative to the directory you're in. These don't start with a forward slash.
+# If you're in the home folder, typing cd dq will move you to /home/dq.
+# However, if you're in the root (/) of the filesystem, typing cd dq will cause an error
+# because the dq folder doesn't exist at the root of the filesystem.
+
+~$ cd /
+/$ cd home
+/home$ cd dq
+
+# Users have certain permissions within the system, and can create their own files, and run their own programs.
+# Users can restrict other users from accessing their files and running programs.
+# We can check which user we are using the whoami command.
+
+# Every user has a home directory, where they can add files specific to their user.
+# Every home directory is at /home. The home directory for dq is /home/dq.
+# A shortcut for referring to the home directory is ~. Typing cd ~ will automatically take you to the current user's home directory
+
+# We can make directories with the mkdir command.
+# If you type mkdir test it will make a directory called test in the current folder, because it's a relative path.
+# If you type mkdir /home/dq/test it will make a folder called test inside the /home/dq folder, because it's an absolute path.
+
+# Commands have options that can modify their behavior. We specify these options by adding them, preceded by one dash, after we invoke the command.
+# adding the -v option after the mkdir command will turn on "verbose" mode, and print output when it makes the folder.
+
+mkdir -v test2
+
+rmdir test2
+# remove directory test2
+
+# We can create files in several ways, but one is the touch command.
+# touch file.txt will create a new file called file.txt
+# Touch can also be used to update the date that a file was last accessed if we have a need to change that time.
+
+touch test.txt
+
+# The echo command will just print whatever you tell it to as output.
+# If you type echo "Dataquest is awesome", it will print Dataquest is awesome.
+
+echo "All bears should juggle"
+
+# echo "Dataquest is awesome" > dataquest.txt will write Dataquest is awesome to stdout (standard output),
+then redirect stdout to the file dataquest.txt.
+The end result is that Dataquest is awesome will be written to the file dataquest.txt.
+
+# We can also edit a file directly from the terminal by nano command
+# nano test.txt will open the test.txt file for editing.
+
+# pip install requests will install the requests package, which can be used to interact with websites and APIs.
+
+# Virtual environments, or virtualenvs enables each project we write to have its own version of Python
+
+# If there's a file named utils.py, we can import it from another file in the same directory using import utils.
+# All the functions and classes defined in utils.py will then be available using dot notation.
+# If there's a function called keep_time in utils.py, we can access it with utils.keep_time() after importing it.
+
+
