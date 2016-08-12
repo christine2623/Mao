@@ -21,7 +21,7 @@ for cityList in five_elements:
     cities_list.append(cityList[0])
 print(cities_list)
 
-
+# test pull
 rows = ['Albuquerque, 749', 'Anaheim, 371', 'Anchorage, 828', 'Arlington, 503', 'Atlanta, 1379']
 print(rows)
 print(rows[0:5])
