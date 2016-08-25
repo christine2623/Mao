@@ -9,8 +9,8 @@ import pandas as pd
 cars = pd.read_csv("auto.csv")
 # Use the Series method unique to assign the unique elements in the column origin to unique_regions.
 # Then use the print function to display unique_regions.
-unique_regions = cars["origin"].unique()
-print(unique_regions)
+unique_origins = cars["origin"].unique()
+print(unique_origins)
 
 
 
@@ -102,3 +102,60 @@ Each of these models is a binary classification model that will return a probabi
 When we apply this model on new data, a probability value will be returned from each model (3 total).
 For each observation, we choose the label corresponding to the model that predicted the highest probability.
 """
+# sort the list numerically and alphabetically
+unique_origins.sort()
+print(unique_origins)
+
+models = {}
+
+# For each value in unique_origins, train a logistic regression model with the following parameters (Documentation):
+# X: Dataframe containing just the cylinder & year binary columns.
+# y: list (or Series) of Boolean values:
+# True if observation's value for origin matches the current iterator variable.
+# False if observation's value for origin doesn't match the current iterator variable.
+# Add each model to the models dictionary with the following structure:
+# key: origin value (1, 2, or 3),
+# value: relevant LogistcRegression model instance.
+from sklearn.linear_model import LogisticRegression
+
+# Dataframe containing just the cylinder & year binary columns
+feature = [f for f in train.columns if (f.startswith("cyl")) | (f.startswith("year"))]
+
+for item in unique_origins:
+    lr = LogisticRegression()
+    X_train = train[feature]
+    Y_train = train["origin"] == item
+    logistic_model = lr.fit(X_train, Y_train)
+    models[item] = logistic_model
+
+
+
+
+# Testing The Models
+# run our test dataset through the models and evaluate how well they performed.
+# For each origin value from unique_origins:
+# Use the LogisticRegression predict_proba function to return the 3 lists of predicted probabilities for the test set
+# and add to the testing_probs Dataframe.
+# create a dataframe with column name set
+testing_probs = pd.DataFrame(columns=unique_origins)
+for item in unique_origins:
+    result_proba = models[item].predict_proba(test[feature])
+    # When adding data to a dataframe, don't forget to give the row and column number to put the data
+    testing_probs[item] = result_proba[:, 1]
+
+print(testing_probs.head())
+
+
+
+
+# Choose The Origin
+# select the origin with the highest probability of classification for that observation.
+"""
+use the Dataframe method .idxmax() to return a Series where each value corresponds to the column
+or where the maximum value occurs for that observation.
+We need to make sure to set the axis paramater to 1 since we want to calculate the maximum value across columns.
+"""
+# Classify each observation in the test set using the testing_probs Dataframe.
+predicted_origins = testing_probs.idxmax(axis=1)
+# Assign the predicted origins to predicted_origins and use the print function to display it.
+print(predicted_origins)
