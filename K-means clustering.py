@@ -215,3 +215,89 @@ print(point_guards.head())
 
 
 
+
+# Visualizing Clusters
+def visualize_clusters(df, num_list):
+    colors = ["green", "orange", "blue", "yellow", "black"]
+    for index in range(0, num_list):
+        clustered_df = df[df["cluster"] == index]
+        plt.scatter(clustered_df["ppg"], clustered_df["atr"], c=colors[index])
+        plt.xlabel('Points Per Game', fontsize=13)
+        plt.ylabel('Assist Turnover Ratio', fontsize=13)
+    plt.show()
+
+result = visualize_clusters(point_guards, 5)
+
+# range(5) = range(0,5)
+
+
+
+
+# Step 2
+# recalculate the centroids for each cluster
+# Finish the function, recalculate_centroids, that:
+# takes in point_guards,
+def recalculate_centroids(df):
+    new_centroids_dict = {}
+    for index in range(0, num_clusters):
+        # uses each cluster_id(from 0 to num_clusters - 1) to pull out all of the players in each cluster
+        clustered_df = df[df["cluster"] == index]
+        # calculates the new arithmetic mean
+        mean_x = np.mean(clustered_df["ppg"])
+        mean_y = np.mean(clustered_df["atr"])
+        # Another way: new_centroid = [np.average(values_in_cluster['ppg']), np.average(values_in_cluster['atr'])]
+        new_centroids_dict[index] = (mean_x, mean_y)
+    # and adds the cluster_id and the new arithmetic mean to new_centroids_dict, the final dictionary to be returned.
+    return new_centroids_dict
+
+centroids_dict = recalculate_centroids(point_guards)
+print(centroids_dict)
+
+
+
+
+# Repeat Step 1
+# Now that we recalculated the centroids, let's re-run Step 1 (assign_to_cluster) and see how the clusters shifted.
+point_guards["cluster"] = point_guards.apply(assign_to_cluster, axis=1)
+result = visualize_clusters(point_guards, 5)
+
+
+
+
+# Repeat Step 2 And Step 1
+# Now we need to recalculate the centroids, and shift the clusters again.
+centroids_dict = recalculate_centroids(point_guards)
+point_guards["cluster"] = point_guards.apply(assign_to_cluster, axis=1)
+visualize_clusters(point_guards, num_clusters)
+
+
+
+
+# Challenges Of K-Means
+"""
+As you repeat Steps 1 and 2 and run visualize_clusters,
+you'll notice that a few of the points are changing clusters between every iteration (especially in areas where 2 clusters almost overlap),
+but otherwise, the clusters visually look like they don't move a lot after every iteration. This means 2 things:
+
+1. K-Means doesn't cause massive changes in the makeup of clusters between iterations, meaning that it will always converge and become stable
+2. Because K-Means is conservative between iterations,
+where we pick the initial centroids and how we assign the players to clusters initially matters a lot
+
+To counteract these problems, the sklearn implementation of K-Means does some intelligent things like
+re-running the entire clustering process lots of times with random initial centroids
+so the final results are a little less biased on one pass-through's initial centroids.
+"""
+from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=num_clusters)
+kmeans.fit(point_guards[['ppg', 'atr']])
+# Use the labels_ attribute to extract the labels from kmeans_model. Assign the result to the variable labels.
+point_guards['cluster'] = kmeans.labels_
+
+visualize_clusters(point_guards, num_clusters)
+
+
+"""Conclusion:
+In this lesson, we explored how to segment NBA players into groups with similar traits.
+Our exploration helped us get a sense of the 5 types of point guards as based on each player's Assist Turnover Ratio and Points Per Game.
+"""
