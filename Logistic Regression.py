@@ -87,12 +87,19 @@ from sklearn.linear_model import LinearRegression
 linear_model = LinearRegression()
 linear_model.fit(admissions[["gpa"]], admissions["admit"])
 
+pred = linear_model.predict(admissions[["gpa"]])
+
+print(pred)
+plt.scatter(admissions["gpa"], admissions["admit"], c="red")
+plt.scatter(admissions["gpa"], pred, c="blue")
+plt.show()
+
 # Import the LogisticRegression class and instantiate a model named logistic_model.
 from sklearn.linear_model import LogisticRegression
 logistic_model = LogisticRegression()
 # Use the LogisticRegression method fit to fit the model to the data.
 # Notice that the gpa column is [[]] but the admit column is only [], (A column-vector y was passed when a 1d array was expected)
-logistic_model.fit(admissions[["gpa"]], admissions["admit"])
+logistic_model.fit(admissions[["gpa"]], admissions[["admit"]])
 
 
 
@@ -110,7 +117,8 @@ print(pred_probs[:,0])
 # Probabililty that the row belongs to label '1'.
 print(pred_probs[:,1])
 # Create and display a scatter plot using the Matplotlib scatter function where:
-plt.scatter(admissions["gpa"], pred_probs[:,1])
+plt.scatter(admissions["gpa"], pred_probs[:,0], c="red")
+plt.scatter(admissions["gpa"], pred_probs[:,1], c="blue")
 # the x-axis is the values in the gpa column,
 # the y-axis is the probability of being classified as label 1.
 plt.show()
@@ -134,4 +142,7 @@ fitted_labels = logistic_model.predict(admissions[["gpa"]])
 print(fitted_labels[:10])
 plt.scatter(admissions["gpa"], fitted_labels)
 plt.show()
+
+
+
 

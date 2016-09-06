@@ -1,5 +1,5 @@
 import pandas as pd
-
+"""
 fandango = pd.read_csv('fandango_score_comparison.csv')
 first_row = 0
 last_row = fandango.shape[0] - 1
@@ -12,3 +12,14 @@ print(output.to_string())
 print("zzz")
 
 print(fandango.iloc[[first_row,last_row],[0, 5]].to_string())
+"""
+
+for i in range(0, 10):
+    print(i)
+print("out of for loop")
+print(i)
+
+i = 3
+while i > 0:
+    print(i)
+    i = i -1

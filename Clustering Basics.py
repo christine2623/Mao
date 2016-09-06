@@ -118,7 +118,7 @@ print(senator_distances)
 # Exploring The Clusters
 """
 We can use the Pandas method crosstab() to compute and display how many Senators from each party ended up in each cluster.
-The crosstab() method takes in two vectors or Pandas Series and computes
+The crosstab() method takes in two (or more) vectors or Pandas Series and computes
 how many times each unique value in the second vector occurs for each unique value in the first vector.
 """
 """

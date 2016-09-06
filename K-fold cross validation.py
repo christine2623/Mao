@@ -90,7 +90,7 @@ def train_and_test(df, list):
     for fold in list:
         train = df[df["fold"] != fold]
         test = df[df["fold"] == fold]
-        logistic_model = model.fit(train[["gpa"]], train["actual_label"])
+        model = model.fit(train[["gpa"]], train["actual_label"])
         labels = model.predict(test[["gpa"]])
         test["predicted_label"] = labels
         match = test["predicted_label"] == test["actual_label"]

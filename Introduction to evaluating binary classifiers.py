@@ -113,7 +113,7 @@ print(true_negatives)
 """
 If the True Positive Rate is low, it means that the model isn't effective at catching positive cases.
 For certain problems, high sensitivity is incredibly important.
- We want a highly sensitive model that is able to "catch" all of the positive cases.
+We want a highly sensitive model that is able to "catch" all of the positive cases.
 """
 # Calculate the number of false negatives (where the model predicted rejected but the student was actually admitted) and
 # assign to false_negatives.

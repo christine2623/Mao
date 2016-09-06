@@ -67,24 +67,92 @@ theta_init = np.random.normal(0,0.01,size=(5,1)) # Draw random samples from a no
 # numpy.random.normal(loc=0.0, scale=1.0, size=None), loc means center of the distribution, scale means std dev of the distribution.
 # size means output shape. If the given shape is, e.g., (m, n, k), then m * n * k samples are drawn.
 # Default is None, in which case a single value is returned.
+# theta_init is a 2d array (list of arrays)
 
-def sigmoid_activation(x, theta):
-    x = np.asarray(x) # x = [1, 2, 3, 4, 5]; array to matrix x[:, None] (shape(5,1)), x[None, :] (shape(1,5))
+def sigmoid_activation2(x, theta):
+    x = np.asarray(x[None, :]) # x = [1, 2, 3, 4, 5]; array to matrix x[:, None] (shape(5,1)), x[None, :] (shape(1,5))
     theta = np.asarray(theta) # theta = [[1], [2], [3], [4], [5]] (shape(5,1))
-    return 1 / (1 + np.exp(-np.dot(theta.T, x)))
+    return 1 / (1 + np.exp(-np.dot(x, theta)[0])) # np.dot is matrix mutiplication  # [0] gets the first item in the list
 
 # Sigmoid Activation Function: hθ(x) = 1 / (1+e ** ((−θ**T)*x))= 1 / (1+e ** −(θ0*1+θ1* x1+θ2* x2)
 # Write a function called sigmoid_activation with inputs x a feature vector and theta a parameter vector of the same length to implement the sigmoid activation function.
 from math import exp
 
-def sigmoid_activation2(x, theta):
+def sigmoid_activation(x, theta):
     pair_total = 0
-    for index, element in enumerate(x):
-        pair = theta[index]*element
-        pair_total += pair
-    result = 1 / (1 + exp(-pair_total))  # exp(x) = e ** x
+    for index in range(0, len(x)):
+        pair_total = pair_total + (theta[index] * x[index])
+
+    # 2 is better
+    two_method = 2
+    if two_method == 1:
+        result = 1 / (1 + exp(-pair_total))  # exp(x) = e ** x
+        # math.exp will remove matrix [] format
+        result = [result]
+        # recover matrix [] format
+    elif two_method == 2:
+        result = 1 / (1 + np.exp(-pair_total))  # exp(x) = e ** x
+        # np.exp can keep matrix [] format
+
     return result
 
 # Assign the value of sigmoid_activation(x0, theta_init) to a1. a1 should be a vector.
 a1 = sigmoid_activation(x0, theta_init)
 print(a1)
+
+"""Finding
+a1 is a probability between 0 to 1. It means taking the values in the first rwo in to account,
+the prob of a1 being Iris-versicolor specis is 0.477"""
+
+
+
+
+
+# Cost Function
+"""
+We can train a single neuron as a two layer network using gradient descent.
+As we learned in the previous mission, we need to minimize a cost function which measures the error in our model.
+The cost function measures the difference between the desired output and actual output, defined as:
+J(θ) = (−1/m) ∑i=1-m (yi*log(hθ(xi)) + (1−yi)log(1−hθ(xi)) )
+
+Since our targets, yi, are binary, either yi or (1−yi) will equal zero.
+One of the terms in the summation will disappear because of this result and the activation function is then used to compute the error.
+For example, if we observe a true target, yi=1, then we want hθ(xi) to also be close to 1.
+So as hθ(xi) approaches 1, the log(hθ(xi)) becomes very close to 0.
+Since the log of a value between 0 and 1 is negative, we must take the negative of the entire summation to compute the cost.
+The parameters are randomly initialized using a normal random variable with a small variance, less than 0.1.
+"""
+# First observation's features and target
+x0 = X[0]
+y0 = y[0]
+
+# Initialize parameters, we have 5 units and just 1 layer
+theta_init = np.random.normal(0,0.01,size=(5,1))
+
+# Write a function, singlecost(), that can compute the cost from just a single observation.
+# This function should use input features X, targets y, and parameters theta to compute the cost function.
+# sigmoid_activation function will return hθ(xi)
+
+# Both singlecost function and singlecost2 function return the same thing
+def singlecost2(X, y, theta):
+    # Compute activation
+    h = sigmoid_activation(X.T, theta)
+    # Take the negative average of target*log(activation) + (1-target) * log(1-activation)
+    cost = -np.mean(y * np.log(h) + (1-y) * np.log(1-h))
+    return cost
+
+first_cost2 = singlecost2(x0, y0, theta_init)
+print(first_cost2)
+
+def singlecost(x, y, theta):
+    m = len(x)
+    h = sigmoid_activation(x, theta)
+    total = -np.mean(y * np.log(h) + (1-y) * np.log(1 - h))
+    return total
+# Assign the cost of variables x0, y, and theta_init to variable first_cost.
+first_cost = singlecost(x0, y0, theta_init)
+print(first_cost)
+
+
+
+

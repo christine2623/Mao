@@ -169,12 +169,14 @@ for each data point:
 mse = sum/n
 """
 # We'll use the mean_squared_error function from scikit-learn to calculate MSE.
-# sklearn.metrics.mean_squared_error(y_true, y_pred, sample_weight=None, multioutput='uniform_average'
+# sklearn.metrics.mean_squared_error(y_true, y_pred, sample_weight=None, multioutput='uniform_average')
 from sklearn.metrics import mean_squared_error
 
 # Use the mean_squared_error function to calculate the MSE of the predicted values and assign to mse.
 mse =mean_squared_error(cars["mpg"], predictions)
 print(mse)
+import numpy
+print("standard deviation : ", + numpy.std(cars["mpg"]))
 
 
 
@@ -192,3 +194,36 @@ print(rmse)
 
 
 # In this mission, we focused on regression, a class of machine learning techniques where the input and output values are continuous values.
+
+
+
+""" Try to perform k-fold cross validation in linear regression:
+from sklearn.cross_validation import KFold
+from sklearn.cross_validation import cross_val_score
+import numpy as np
+# Create a new instance of the KFold class with the following properties:
+# n set to length of admissions,
+# 5 folds,
+# shuffle set to True,
+# random seed set to 8 (so we can answer check using the same seed),
+# assigned to the variable kf.
+kf = KFold(cars.shape[0], 5, shuffle=True, random_state=8)
+
+# Create a new instance of the LogisticRegression class and assign to lr
+model = LinearRegression()
+
+# Use the cross_val_score function to perform k-fold cross-validation:
+# using the LogisticRegression instance lr,
+# using the gpa column for training,
+# using the actual_label column as the target column,
+# returning an array of accuracy values (one value for each fold).
+accuracies = cross_val_score(model, cars[["weight"]], cars["mpg"], scoring="accuracy", cv=kf) // ValueError: continuous is not supported
+
+# compute the average accuracy
+average_accuracy = np.mean(accuracies)
+
+print(accuracies)
+print(average_accuracy)
+
+# You can only perform accuracy_scoring with classification variable, no continuous variable
+"""

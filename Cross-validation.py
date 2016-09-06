@@ -82,7 +82,9 @@ match = test["predicted_label"] == test["actual_label"]
 correct_match = test[match]
 # Assign the accuracy value to accuracy and display it using the print function.
 accuracy = len(correct_match)/test.shape[0]
+# Another way: accuracy2 = correct_match.shape[0]/test.shape[0]
 print(accuracy)
+# print(accuracy2)
 
 
 
