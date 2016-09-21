@@ -20,7 +20,7 @@ From the scatter plot, I visually see that a linear regression looks to be a goo
 
 
 # Fit The Linear Model
-# Statsmodels is a library which allows for rigorous statistical analysis in python.
+# Stats models is a library which allows for rigorous statistical analysis in python.
 # The class sm.OLS is used to fit linear models, standing for oridinary least squares.
 """
 OLS() does not automatically add an intercept to our model.
@@ -132,7 +132,7 @@ print(TSS)
 """
 Intuitively we know that a low SSE and high RSS indicates a good fit.
 This single measure tells us what percentage of the total variation of the data our model is accounting for.
-Correspondingly, the R2R2 exists between 0 and 1.
+Correspondingly, the R2 exists between 0 and 1.
 """
 # Compute the R-Squared for our model, linearfit. Assign the R-squared to variable R2.
 R2 = RSS/TSS
@@ -197,7 +197,7 @@ SSE = np.sum((y.values - yhat)**2)
 # pisa.year = pisa["year"]
 xvar = np.sum((pisa["year"] - pisa.year.mean())**2)
 # Compute variance in b1
-s2b1 = SSE / ((y.shape[0] - 2) / xvar)
+s2b1 = SSE / ((y.shape[0] - 2) * xvar)
 print(s2b1)
 
 
@@ -237,6 +237,8 @@ x = np.linspace(-3,3,100)
 
 # Compute the pdf with 3 degrees of freedom
 print(t.pdf(x=x, df=3))
+plt.plot(t.pdf(x=x, df=3))
+plt.show()
 
 
 
@@ -295,7 +297,9 @@ df = pisa.shape[0] - 2
 
 # The probability to test against
 p = t.cdf(tstat, df=df)
-
+print(p)
+plt.plot(p)
+plt.show()
 # Do we accept β1>0?
 if p > pval:
     beta1_test = True

@@ -121,7 +121,7 @@ y = np.linspace(-10,10,100)
 # ie. (-10, 10), (-10, -9.8), ... (0, 0), ... ,(10, 9.8), (10,9.8)
 # x and y need to be transformed to 100x100 matrices to represent these coordinates
 X, Y = np.meshgrid(x,y)  # np.meshgrid will build a coordinate matrices of x and y
-print(X[:5,:5],"\n",Y[:5,:5])
+print(X[:5,:5],"\n",Y[:5,:5])   # X and Y are two 100x100 metrics
 
 # Compute a 3D parabola
 Z = X**2 + Y**2
@@ -139,7 +139,7 @@ plt.show()
 # Make a 3D surface plot with theta0s on the x-axis, theta1s on the y-axis, and the corrsponding cost on the z-axis.
 theta0s = np.linspace(-2,2,100)
 theta1s = np.linspace(-2,2, 100)
-COST = np.empty(shape=(100,100))
+COST = np.empty(shape=(100,100))  # create an empty 100x100 metrics
 
 X, Y = np.meshgrid(theta0s, theta1s)  # np.meshgrid will build a coordinate matrices of x and y
 print(X[:10,:10], "\n", Y[:10,:10])  # X: ndarray,  Y: ndarray
@@ -153,10 +153,10 @@ for i in range(100):
 # Assign each cost into the repsective index in variable cost.
 
 # 3D plot takes too long, comment it for now (below 4 lines of codes)
-# fig2 = plt.figure()
-# ax = fig.gca(projection='3d')
-# ax.plot_surface(X=X,Y=Y,Z=COST)
-# plt.show()
+fig2 = plt.figure()
+ax = fig.gca(projection='3d')
+ax.plot_surface(X=X,Y=Y,Z=COST)
+plt.show()
 
 
 

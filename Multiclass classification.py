@@ -8,7 +8,7 @@ Using this information we will predict the origin of the vehicle, either North A
 import pandas as pd
 cars = pd.read_csv("auto.csv")
 # Use the Series method unique to assign the unique elements in the column origin to unique_regions.
-# Then use the print function to display unique_regions.
+# Then use the print function to display unique_origins. unique_origins is a ndarray.
 unique_origins = cars["origin"].unique()
 print(unique_origins)
 
